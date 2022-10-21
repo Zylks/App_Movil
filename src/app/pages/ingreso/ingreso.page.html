@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-img src="https://cdn.discordapp.com/attachments/962446660816994347/1013992565479063612/unknown.png" style="display:inline-block" id="logo"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<div class="ion-padding-vertical">
+
+  <ion-card class="ion-text-center ion-padding-vertical">
+    <ion-card-title class="ion-text-center">
+      <ion-label>
+        <br>
+        <h2>Sistema de Asistencia DUOC UC</h2>
+      </ion-label>
+    </ion-card-title>
+  <br>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+
+        <ion-input type="text" [(ngModel)]="usuario.correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" >Contraseña</ion-label>
+
+        <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="12">
+         <br>
+          <ion-button expand="block" (click)="ingresar()">Ingresar</ion-button>
+        </ion-col>
+      </ion-row>
+      
+    </ion-card-content>
+    <ion-label>
+      <br>
+      <a (click)="ingresarPaginaValidarCorreo()">Recuperar contraseña</a>
+    </ion-label>
+
+  </ion-card>
+
+</div>
+</ion-content>

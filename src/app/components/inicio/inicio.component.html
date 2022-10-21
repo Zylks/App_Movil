@@ -1,0 +1,57 @@
+
+
+<ion-content  [hidden]="escaneando" class="ion-padding-horizontal">
+    
+    
+    <ion-list [hidden]="escaneando">
+        <ion-item>
+          <ion-avatar>
+            <ion-img src="https://e7.pngegg.com/pngimages/223/244/png-clipart-computer-icons-avatar-user-profile-avatar-heroes-rectangle.png"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <!-- <h2 *ngIf="usuario">{{ usuario.correo }}</h2>  -->
+            usuario
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    
+
+      <ion-title class="ion-padding-top" [hidden]="escaneando">
+        <ion-label>
+           <ion-title #bienvenido class="ion-text-center ion-text" id="bienvenido">
+            ¡Bienvenido!
+          </ion-title>
+            <ion-card-title class="ion-text-center">
+              <ion-label #nombreusuario>
+                Nombre usuario
+                <!-- <h1 *ngIf="usuario.correo == 'atorres@duocuc.cl'" >  Ana Torres Leiva </h1> 
+                <h1 *ngIf="usuario.correo == 'avalenzuela@duocuc.cl'" > Alberto Valenzuela Nuñez </h1> 
+                <h1 *ngIf="usuario.correo == 'cfuentes@duocuc.cl'" > Carla Fuentes González </h1> -->
+              </ion-label>
+            </ion-card-title>
+        </ion-label>
+      </ion-title>
+      <h4 class="ion-text-center" [hidden]="escaneando">Escanea el código QR para registrar tu asistencia a clases</h4>
+</ion-content>
+
+
+<ion-content class="ion-padding-horizontal"
+[style.--background]="escaneando? '#00000000':'#fff'">
+<ion-button class="scan-button2" shape="round" color="tertiary"  (click)="comenzarEscaneo()" [hidden]="escaneando">
+  <ion-icon name="scan" slot="start"></ion-icon>
+  Escanear código QR
+</ion-button>
+
+<br>
+<br>
+<p class="ion-text-center" *ngIf="result && !escaneando">{{result}}</p>
+
+<ion-button class="scan-button2" shape="round"  color="tertiary"  (click)="detenerEscaneo()" [hidden]="!escaneando">
+    <ion-icon name="stop" slot="start"></ion-icon>
+    Detener escaneo de código QR
+  </ion-button> 
+    
+  
+  <div class="scan-box"[hidden]="!escaneando"></div>
+  </ion-content>
+  

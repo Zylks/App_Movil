@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+   <ion-img src="https://cdn.discordapp.com/attachments/962446660816994347/1013992565479063612/unknown.png"  id="imagen"></ion-img>
+   <ion-title #titulo class="ion-text-left ion-text" id="titulo">
+    <div>Sistema de Asistencia Duoc UC 
+    </div>
+  </ion-title>
+  </ion-toolbar>
+
+<ion-toolbar>
+  <ion-segment value="pizza" (ionChange)="segmentChanged($event)">
+    
+    <ion-segment-button value="inicio">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>inicio</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="publicaciones">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>publicaciones</ion-label>
+    </ion-segment-button>
+
+
+  </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+
+
+
+
+<ion-content > 
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
+    
+
+
+
+<ion-button routerLink="">cerrar sesión</ion-button>
+
+
+<ion-footer [hidden]="escaneando">
+  <ion-toolbar color="primary">
+    <ion-title #desarrolladores class="ion-text-left ion-text">
+      App desarrollada por Claudio Navarro y benjamin Ramirez
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
